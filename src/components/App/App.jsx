@@ -4,6 +4,10 @@ import Navigation from "../Navigation/Navigation";
 import { lazy, Suspense } from "react";
 import s from "./App.module.css";
 import { Hourglass } from "react-loader-spinner";
+import November24 from "../November24/November24";
+import October24 from "../October24/October24";
+import December24 from "../December24/December24";
+import MonthlyData from "../MonthlyData/MonthlyData";
 
 const MoviesPage = lazy(() => import("../../pages/MoviesPage/MoviesPage"));
 const NotFoundPage = lazy(() =>
@@ -38,6 +42,11 @@ function App() {
           <Route path="/movies/:movieId" element={<MovieDetailsPage />}>
             <Route path="cast" element={<MovieCast />} />
             <Route path="reviews" element={<MovieReviews />} />
+          </Route>
+          <Route path="/monthly-data" element={<MonthlyData />}>
+            <Route path="october-2024" element={<October24 />} />
+            <Route path="november-2024" element={<November24 />} />
+            <Route path="december-2024" element={<December24 />} />
           </Route>
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
