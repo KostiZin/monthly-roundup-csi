@@ -6,6 +6,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import s from "../App/App.module.css";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -34,11 +35,16 @@ function createData(name, monthCurrent, monthPrevious, monthLastYear) {
 }
 
 const rows = [
-  createData("total", 100, 100, 100),
-  createData("satisfactory", 200, 200, 200),
-  createData("unsatisfactory", 300, 300, 300),
-  createData("re-opened", 400, 400, 400),
-  createData("initiated outside bh", 500, 500, 500),
+  createData("total", 559, 680, 458),
+  createData("satisfactory", 112, 118, 92),
+  createData("unsatisfactory", 26, 37, 14),
+  createData("re-opened", 329, 366, 243),
+  createData(
+    "initiated outside bh",
+    "67 (11.99%)",
+    "119 (17.50%)",
+    "96 (20.96%)"
+  ),
 ];
 
 //SECOND TABLE
@@ -47,10 +53,10 @@ function createDataSecond(name, monthCurrent, monthPrevious, monthLastYear) {
 }
 
 const rowsSecond = [
-  createDataSecond("response time", 100, 100, 100),
-  createDataSecond("wait time bh", 200, 200, 200),
-  createDataSecond("resolution time", 300, 300, 300),
-  createDataSecond("CSAT score", 400, 400, 400),
+  createDataSecond("response time", "40s", "42s", "52s"),
+  createDataSecond("wait time bh", "38s", "37s", "1m 58s"),
+  createDataSecond("resolution time", "17m 5s", "14m 40s", "21m 14s"),
+  createDataSecond("CSAT score", "4.96", "4.92", "4.93"),
   //   createDataSecond("initiated outside bh", 500, 500, 500),
 ];
 
@@ -60,7 +66,7 @@ export default function October24() {
       <div>
         <TableContainer component={Paper}>
           <Table sx={{ minWidth: 700 }} aria-label="customized table">
-            <TableHead>
+            <TableHead className={s.tableHead}>
               <TableRow>
                 <StyledTableCell>Conversations</StyledTableCell>
                 <StyledTableCell align="right">October 2024</StyledTableCell>

@@ -45,8 +45,8 @@ function App() {
           </Route>
           <Route path="/monthly-data" element={<MonthlyData />}>
             <Route path="october-2024" element={<October24 />} />
-            <Route path="november-2024" element={<November24 />} />
-            <Route path="december-2024" element={<December24 />} />
+            {/* <Route path="november-2024" element={<November24 />} />
+            <Route path="december-2024" element={<December24 />} /> */}
           </Route>
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
